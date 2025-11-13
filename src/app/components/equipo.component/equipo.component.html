@@ -1,9 +1,34 @@
 <div>
-    <h1>{{equipo.nombre}}</h1>
-    <img src={{equipo.imagen}} alt="foto" style="width: 300px; height: 300px;">
-    <h3>Champions: {{equipo.champions}}</h3>
-    <h4>Web: {{equipo.web}}</h4>
-    <p>Descripcion: {{equipo.descripcion}}</p>
-    <br><br>
-    <app-jugadornombre [idEquipo]="equipo.idEquipo"></app-jugadornombre>
+    @if (equipoEntero.equipo && equipoEntero.jugadores) {
+        <h1>{{equipoEntero.equipo.nombre}}</h1>
+        <img src={{equipoEntero.equipo.imagen}} alt="foto" style="width: 300px; height: 300px;">
+        <h3>Champions: {{equipoEntero.equipo.champions}}</h3>
+        <h4>Web: {{equipoEntero.equipo.web}}</h4>
+        <p>Descripcion: {{equipoEntero.equipo.descripcion}}</p>
+    
+        <table class="table">
+            <thead>
+                <th>ID Jugador</th>
+                <th>Nombre</th>
+                <th>Posicion</th>
+                <th>Imagen</th>
+                <th>Fecha de nacimiento</th>
+                <th>Pais</th>
+            </thead>
+            <tbody>
+                @for (jugador of equipoEntero.jugadores; track jugador) {
+                    <tr>
+                        <td>{{jugador.idJugador}}</td>
+                        <td>{{jugador.nombre}}</td>
+                        <td>{{jugador.posicion}}</td>
+                        <td><img src={{jugador.imagen}} alt="foto" style="width: 150px; height: 150px;"></td>
+                        <td>{{jugador.fechaNacimiento}}</td>
+                        <td>{{jugador.pais}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }@else {
+        <img src="https://i.pinimg.com/originals/44/0b/9d/440b9dc08fefeff13ec30dc0ae6a09df.gif" alt="foto" style="width: 400px; height: 400px;">
+    }
 </div>

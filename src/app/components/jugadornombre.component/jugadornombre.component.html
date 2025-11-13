@@ -1,0 +1,25 @@
+<div>
+    <h1>Jugadores</h1>
+    <table class="table">
+            <thead>
+                <th>ID Jugador</th>
+                <th>Nombre</th>
+                <th>Posicion</th>
+                <th>Imagen</th>
+                <th>Fecha de nacimiento</th>
+                <th>Pais</th>
+            </thead>
+            <tbody>
+                @for (jugador of jugadores; track jugador) {
+                    <tr>
+                        <td>{{jugador.idJugador}}</td>
+                        <td>{{jugador.nombre}}</td>
+                        <td>{{jugador.posicion}}</td>
+                        <td><img src={{jugador.imagen}} alt="foto" style="width: 150px; height: 150px;"></td>
+                        <td>{{jugador.fechaNacimiento}}</td>
+                        <td>{{jugador.pais}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</div>

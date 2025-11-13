@@ -1,0 +1,9 @@
+<div>
+    <h1>{{equipo.nombre}}</h1>
+    <img src={{equipo.imagen}} alt="foto" style="width: 300px; height: 300px;">
+    <h3>Champions: {{equipo.champions}}</h3>
+    <h4>Web: {{equipo.web}}</h4>
+    <p>Descripcion: {{equipo.descripcion}}</p>
+    <br><br>
+    <app-jugadornombre [idEquipo]="equipo.idEquipo"></app-jugadornombre>
+</div>

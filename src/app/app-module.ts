@@ -9,13 +9,18 @@ import { ArchivoComponent } from './components/archivo.component/archivo.compone
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { SeviceArchivos } from './services/service.archivos';
+import { SeviceFutbol } from './services/service.futbol';
+import { EquipoComponent } from './components/equipo.component/equipo.component';
+import { JugadornombreComponent } from './components/jugadornombre.component/jugadornombre.component';
 
 @NgModule({
   declarations: [
     App,
     HomeComponent,
     MenuComponent,
-    ArchivoComponent
+    ArchivoComponent,
+    EquipoComponent,
+    JugadornombreComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +31,7 @@ import { SeviceArchivos } from './services/service.archivos';
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(),
     SeviceArchivos,
+    SeviceFutbol,
   ],
   bootstrap: [App]
 })

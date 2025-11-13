@@ -1,0 +1,9 @@
+<div>
+    <h1>Subir archivos</h1>
+    <form #archivoForm="ngForm">
+        <label>Introduzca un archivo: </label>
+        <input type="file" name="cajaArchivo" #cajaArchivo class="form-control">
+        <br>
+        <button class="btn btn-info" (click)="subirArchivo()">Subir Archivo</button>
+    </form>
+</div>

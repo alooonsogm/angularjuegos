@@ -12,6 +12,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class JugadornombreComponent implements OnInit{
   public jugadores!: Array<Jugador>;
+  public nombre!: string;
 
   constructor(private _service: SeviceFutbol, private _activateRoute: ActivatedRoute){
 
@@ -19,9 +20,9 @@ export class JugadornombreComponent implements OnInit{
 
   ngOnInit(): void {
     this._activateRoute.params.subscribe((params: Params) => {
-      let nombre = params["nombre"];
-      if(nombre != null){
-        this._service.getJugadorNombre(nombre).subscribe(response => {
+      this.nombre = params["nombre"];
+      if(this.nombre != null){
+        this._service.getJugadorNombre(this.nombre).subscribe(response => {
           this.jugadores = response;
         })
       }

@@ -20,9 +20,11 @@ export class JugadornombreComponent implements OnInit{
   ngOnInit(): void {
     this._activateRoute.params.subscribe((params: Params) => {
       let nombre = params["nombre"];
-      this._service.getJugadorNombre(nombre).subscribe(response => {
-        this.jugadores = response;
-      })
+      if(nombre != null){
+        this._service.getJugadorNombre(nombre).subscribe(response => {
+          this.jugadores = response;
+        })
+      }
     })
   }
 }

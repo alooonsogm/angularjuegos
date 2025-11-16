@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: "archivos", component: ArchivoComponent },
   { path: "equipo/:id", component: EquipoComponent },
   { path: "jugadornombre/:nombre", component: JugadornombreComponent },
+  { path: "jugadornombre", component: JugadornombreComponent },
 ];
 
 @NgModule({

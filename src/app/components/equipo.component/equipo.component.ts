@@ -13,17 +13,21 @@ import { forkJoin } from 'rxjs';
   styleUrl: './equipo.component.css',
 })
 export class EquipoComponent implements OnInit{
-  public equipoEntero: DatosEquipo;
+  public equipoEntero!: DatosEquipo;
   public equipo!: Equipo;
   public jugadores!: Array<Jugador>;
 
   constructor(private _service: SeviceFutbol, private _activateRoute: ActivatedRoute){
-    this.equipoEntero = new DatosEquipo(this.equipo, this.jugadores);
+    
   }
 
   ngOnInit(): void {
     this._activateRoute.params.subscribe((params: Params) => {
       let id = params["id"];
+
+      this.equipo = new Equipo(99, "", "", 1, "", "", 2);
+      this.jugadores = [new Jugador(200, "", "", "", "", "", 3)];
+      this.equipoEntero = new DatosEquipo(this.equipo, this.jugadores);
 
       //forkJoin se encarga de subscribirse a los servicios para ejecutar la peticion, y cuando ambas
       //peticiones terminan, lo muestra por pantalla.

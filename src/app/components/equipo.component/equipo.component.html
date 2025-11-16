@@ -1,5 +1,5 @@
 <div>
-    @if (equipoEntero.equipo && equipoEntero.jugadores) {
+    @if (equipoEntero.equipo.idEquipo != 99 && equipoEntero.jugadores[0].idJugador != 200) {
         <h1>{{equipoEntero.equipo.nombre}}</h1>
         <img src={{equipoEntero.equipo.imagen}} alt="foto" style="width: 300px; height: 300px;">
         <h3>Champions: {{equipoEntero.equipo.champions}}</h3>
